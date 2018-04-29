@@ -1778,8 +1778,10 @@ class GLMap(private val jsettings : Settings.jsonsettings) : InputAdapter(), App
       val equippedWeapons = actorHasWeapons[actor.netGUID]
       val df = DecimalFormat("###.#")
       var weapon = ""
-
-   //  spriteBatch.transformMatrix = Matrix4().setToRotation(Vector3(0f, 0f, 1f), 90f)
+      val numeyes = spectatedCount[selfID] ?: 0
+      val eyes = numeyes.toString()
+         if(spectatedCount[actor.netGUID] != null &&  spectatedCount[actor.netGUID] != 0 )
+           println("spectated: "+spectatedCount[actor.netGUID] +" N:"+name)
 
       if (equippedWeapons != null)
       {
